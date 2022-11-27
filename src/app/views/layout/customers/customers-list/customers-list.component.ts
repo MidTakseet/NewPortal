@@ -59,9 +59,13 @@ export class CustomersListComponent implements OnInit {
       this._userService.getAllUsersList(this.customerName).subscribe(res => {
         if(res.data != null)
            this.usersList = res.data ; 
+
         else{
           this._spinnerService.requestEnded();
         } 
+
+        
+        
            this.showTable = this.usersList?.length == 0 ?false : true
   
         this._spinnerService.requestEnded();

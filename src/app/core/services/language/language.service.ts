@@ -17,8 +17,8 @@ export class LanguageService {
   getCurrnetLang() {
     let lang = this.translateService.currentLang
       ? this.translateService.currentLang
-      : JSON.parse(localStorage.getItem('DEFAULT_LANGUAGE')!)
-        ? JSON.parse(localStorage.getItem('DEFAULT_LANGUAGE')!)
+      : localStorage.getItem('DEFAULT_LANGUAGE')!
+        ? localStorage.getItem('DEFAULT_LANGUAGE')!
         : environment.language;
     return lang || 'ar';
   }
@@ -41,7 +41,7 @@ export class LanguageService {
   }
 
   private setLangsAndStyles(lang: string = this.getCurrnetLang()): void {
-    localStorage.setItem('DEFAULT_LANGUAGE', JSON.stringify(lang));
+    localStorage.setItem('DEFAULT_LANGUAGE', lang);
     this.translateService.setDefaultLang(lang);
     this.setStylesDirections(lang);
   }

@@ -46,6 +46,9 @@ export class TopbarComponent implements OnInit {
 
    
   public onSwitchLanguages(lang:string) {
+    let currentLang = localStorage.getItem('DEFAULT_LANGUAGE');
+    if(currentLang == lang)
+       return
     if(lang == 'en')
        this.langPath = 'assets/images/flags/us.jpg';
     else if(lang == 'ar')
