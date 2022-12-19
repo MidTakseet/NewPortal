@@ -521,319 +521,8 @@
         </div>
       </div>
 
-
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title mb-4">
-            {{ "USERITEMINFO.HEDING.FINANCIAL" | translate }}
-          </h4>
-          <div class="table-responsive">
-            <table class="table table-nowrap mb-0">
-              <tbody>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.INCOME" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.income }}</td>
-                </tr>
-
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.ACTIVECREDITFACILITY" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.activeCreditFacility }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.ISCOREFILE" | translate }}
-                    :
-                  </th>
-
-                  <td>
-
-                    {{userItem.iscoreFile}}
-
-                  </td>
-                </tr>
-
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.OTHERDOCUMENTS" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.otherDocuments }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.CREDITLIMIT" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.creditLimit }}</td>
-                </tr>
-                <tr  *ngIf="false">
-                  <th scope="row">
-                    {{ "USERITEMINFO.riskLimit" | translate }}
-                    :
-                  </th>
-                  <td  *ngIf="false">
-                    <span *ngIf="!isEditRiskLimit"> {{ riskApprovedLimit }}</span>
-                    <input (keypress)="numberOnly($event)" maxlength="6" *ngIf="isEditRiskLimit" [(ngModel)]="riskApprovedLimit" value="{{ riskApprovedLimit }}" type="text" class="mb-3 form-control" id="formrow-inputCity">   &nbsp;
-                    <button (click)="editRiskLimit()" [disabled]="isEditRiskLimit && (riskApprovedLimit<5000 || riskApprovedLimit > 100000) " type="button" [ngClass]="isEditRiskLimit ? 'btn btn-success' : 'btn btn-primary'"><i [ngClass]="isEditRiskLimit ? 'bx bx-save font-size-16 align-middle me-2' : 'bx bx-edit font-size-16 align-middle me-2'"></i> {{isEditRiskLimit?'Save Risk Limt':'Edit Risk Limet'}} </button>
-                    &nbsp; <button *ngIf="isEditRiskLimit" (click)="editRiskLimit(true)" type="button" class='btn btn-danger'><i class='bx bx-x font-size-16 align-middle me-2'></i>  {{ "USERITEMINFO.cancel" | translate }} </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.ASSUMEDINCOME" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.assumedIncome }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title mb-4">
-            {{ "USERITEMINFO.HEDING.LOCATION" | translate }}
-          </h4>
-          <div class="table-responsive">
-            <table class="table table-nowrap mb-0">
-              <tbody>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.GOVERNORATE" | translate }} :
-                  </th>
-                  <td>{{ userItem.governorate }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.AREA" | translate }}
-
-                    :
-                  </th>
-                  <td>{{ userItem.area }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.CITY" | translate }}
-
-                    :
-                  </th>
-                  <td>{{ userItem.city }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.HOMEADDRESS" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.homeAddress }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.UPDATEADDRESS" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.niHomeAddress }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title mb-4">
-            {{ "USERITEMINFO.HEDING.ScoreCard" | translate }}
-          </h4>
-          <div class="table-responsive">
-            <table class="table table-nowrap mb-0">
-              <tbody>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title mb-4">
-            {{ "USERITEMINFO.HEDING.PERSONAL" | translate }}
-          </h4>
-          <div class="table-responsive">
-            <table class="table table-nowrap mb-0">
-              <tbody>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.PHONE" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.mobileNumber }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.FULLNAME" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.name }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.NATIONALID" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.nationalId }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.EXPIRYDATE" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.expiryDate }}</td>
-                </tr>
-
-
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.GENDER" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.gender }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.AGE" | translate }}
-
-                    :
-                  </th>
-                  <td>{{ userItem.age }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.MARTIALSTATUS" | translate }}
-
-                    :
-                  </th>
-                  <td>{{ userItem.maritalStatus }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.EMAIL" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.email }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.COMPANYNAME" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.companyName }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.EDUCATION" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.education }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.OCCUPATION" | translate }} :
-                  </th>
-                  <td>{{ userItem.occupation}}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.JOBTITLE" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.jobTitle }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.EMERGENCYCONTACTPERSON" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.emergencyContactPerson }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.EMERGENCYCONTACTNUMBER" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.emergencyContactPhoneNumber }}</td>
-                </tr>
-
-
-
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.CAR" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.car }}</td>
-                </tr>
-
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.CARMODELYEAR" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.carModelYear }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.CLUBID" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.clubId }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.CLUDCATEGORY" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.clubCategory }}</td>
-                </tr>
-
-
-                <!-- <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.HASCAR" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.hasCar }}</td>
-                </tr> -->
-                <!-- <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.HASCLUBID" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.hasClubId }}</td>
-                </tr> -->
-
-
-
-
-                <tr>
-                  <th scope="row">
-                    {{ "USERITEMINFO.STATUS" | translate }}
-                    :
-                  </th>
-                  <td>{{ userItem.status }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+ 
+      
     </div>
     <div class="col-md-6" *ngIf="!userItem">
       <div class="card shadow-none border mb-0" aria-hidden="true">
@@ -870,12 +559,11 @@
         </div>
       </div>
     </div>
+    <div class="col-xl-6"></div>
     <div class="col-xl-6" *ngIf="userItem">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">{{ "USERITEMINFO.HEDING.DOCUMENTINFORMATION" | translate }}</h4>
-          <!-- <p class="card-title-desc">In this example lazy-loading of images is enabled for the next image
-              based on move direction. </p> -->
+          <h4 class="card-title">{{ "USERITEMINFO.HEDING.DOCUMENTINFORMATION" | translate }}</h4> 
           <div class="popup-gallery d-flex flex-wrap">
             <div class="card1" *ngFor="let image of allContractImages; let i=index">
               <div class="img-fluid contain-images">
@@ -886,10 +574,32 @@
         </div>
       </div>
 
-      <div class="card">
-        <div class="imgBox">
-          <img [src]="imgSrc" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <div  class="card" *ngIf="allContractImages.length > 0">
+        <div class="card-body">
+            <h4 class="card-title"> {{ "USERITEMINFO.Details" | translate }} </h4>
+            <div class="imgBox">
+              <img [src]="imgSrc" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            </div>
+            <div class="table-responsive">
+              <table class="table table-nowrap mb-0">
+                   <tbody> 
+                      <tr>
+                          <th scope="row">{{ "USERITEMINFO.HEDING.LOCATION" | translate }} : </th>
+                          <td [innerText]="locationName">{{locationName}}</td>
+                     </tr>
+                      <tr>
+                          <th scope="row">{{ "USERITEMINFO.PHONENUMBER" | translate }} : </th>
+                           <td>{{mobileNum}}</td>
+                      </tr>
+                      <tr>
+                           <th scope="row">{{ "CONFIGPROFESSIONS.name" | translate }} : </th>
+                           <td>{{name}}</td>
+                      </tr>
+                   </tbody>
+                </table>
+            </div>
         </div>
+        
       </div>
     </div>
 
@@ -913,9 +623,4 @@
       </div>
     </div>
   </div>
-
-  <!-- ------------------- start spinner ---------------------- -->
-  <!-- <div *ngIf="loading" class="spinner">
-    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-  </div> -->
-  <!-- ------------------- end spinner ------------------------ -->
+ 

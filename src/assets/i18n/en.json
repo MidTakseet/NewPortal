@@ -123,8 +123,8 @@
     "OTHERDOCUMENTS":"Other Documents",
     "CREDITLIMIT":"Credit Limit",
     "ASSUMEDINCOME":"Assumed Income",
-    "ExportExcel":"Export"
-
+    "ExportExcel":"Export",
+    "Details":"Details"
   }
   ,
   "CONFIGPROFESSIONS":{

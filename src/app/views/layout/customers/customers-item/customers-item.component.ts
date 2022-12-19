@@ -51,7 +51,11 @@ export class CustomersItemComponent implements OnInit {
   isEditRiskLimit: boolean = false;
   rejectionReason: string = ''
 
-  imgSrc: string = ''
+  imgSrc: string = '';
+  locationName:string = '';
+  mobileNum:string = '';
+  name:string = ''; 
+
   loading: boolean = false;
 
 
@@ -177,7 +181,17 @@ debugger
       element.content = 'data:image/jpg;base64,'+ element.content
       element.content =this._sanitizer.bypassSecurityTrustUrl(element.content)
     });
-    this.imgSrc = res.data.userDocuments[0].content;
+ 
+
+    if(res.data.userDocuments.length > 0){
+      this.imgSrc = res.data.userDocuments[0].content; 
+
+      if(res.data.userDocuments[0].activatorDetails != null){ 
+        this.locationName = res.data.userDocuments[0].activatorDetails.activatorLocation.name;
+        this.mobileNum = res.data.userDocuments[0].activatorDetails.mobileNumber;
+        this.name = res.data.userDocuments[0].activatorDetails.nameEn;
+      }
+    }
 
     this.pesonalImages = this._sanitizer.bypassSecurityTrustResourceUrl(
       'data:image/jpg;base64,' + res.data.personalImage
@@ -352,6 +366,17 @@ debugger
 
   showImg(index: number) {
     this.imgSrc = this.allContractImages[index].content;
+
+    
+    if(this.allContractImages[index].activatorDetails != null){ 
+      this.locationName = this.allContractImages[index].activatorDetails.activatorLocation.name;
+      this.mobileNum = this.allContractImages[index].activatorDetails.mobileNumber;
+      this.name = this.allContractImages[index].activatorDetails.nameEn;
+    }else{ 
+      this.locationName = 'N/A';
+      this.mobileNum = 'N/A';
+      this.name = 'N/A';
+    }
   }
 
   showSpinner() {
