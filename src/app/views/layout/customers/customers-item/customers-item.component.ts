@@ -109,10 +109,10 @@ export class CustomersItemComponent implements OnInit {
 
     this.getUserById();
 
-    this._userService.getRejectResponse().subscribe(res => {
-      this.rejectResponse = res.data
+    // this._userService.getRejectResponse().subscribe(res => {
+    //   this.rejectResponse = res.data
 
-    })
+    // })
 
 
 

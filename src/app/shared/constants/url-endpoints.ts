@@ -8,12 +8,12 @@ export abstract class UrlEndpoints {
   static readonly GET_TEST: string = 'test';
 
 
-  static readonly POST_TOKEN_AUTH: string = "api/Auth/Risklogin"; 
+  static readonly POST_TOKEN_AUTH: string = "api/Auth/Operationlogin"; 
   
-  static readonly POST_AllUsersList: string = 'api/Risk/ClietSearch?str=';
+  static readonly POST_AllUsersList: string = 'api/Operation/ClietSearch?str=';
 
   static readonly GET_RejectResponse: string = 'api/Risk/RejectResponse';
-  static readonly GET_UserById: string = 'api/Risk/GetUserDocumentsByClientId?MobileNumber=';
+  static readonly GET_UserById: string = 'api/Operation/GetUserDocumentsByClientId?MobileNumber=';
   static readonly post_UpdateNationalIdData: string = 'api/Risk/EditNationalIDData';
   static readonly GET_maritalStatus: string = 'api/lookUps/MaritalStatuses';
   static readonly POST_ApproveUser: string = 'api/Risk/Approve';
